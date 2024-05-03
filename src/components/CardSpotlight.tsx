@@ -50,14 +50,14 @@ const CardSpotlight: React.FC<CardSpotlightProps> = ({ children }) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative flex items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-gradient-to-r from-black to-zinc-950 shadow-2xl"
+      className="relative flex items-center justify-center overflow-hidden rounded-xl border border-white/25 bg-gradient-to-r from-black to-decrypt-800 shadow-2xl"
       style={{ minWidth: "fit-content", minHeight: "fit-content" }}
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,0.2), transparent 40%)`,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(123, 208, 245, 0.2), transparent 40%)`,
         }}
       />
       {children}

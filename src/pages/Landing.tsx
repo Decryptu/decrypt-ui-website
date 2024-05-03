@@ -19,7 +19,7 @@ const Landing: React.FC = () => {
           const SvgComponent = component.svg; // Dynamically get the SVG component
           return (
             <CardSpotlight key={component.name}>
-              <Link to={component.route} className="block p-4 container hover:opacity-75">
+              <Link to={component.route} className="block p-4 container">
                 <div className="flex flex-col items-center">
                   <SvgComponent />
                   <h3 className="text-xl font-bold mt-2">{component.name}</h3>
