@@ -1,4 +1,4 @@
-import FallbackSvg from '../assets/images/Fallback';
+import FallbackSvg from "../assets/images/Fallback";
 
 export type ComponentInfo = {
 	name: string;
