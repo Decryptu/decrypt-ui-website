@@ -13,3 +13,7 @@ code,
 pre {
   font-family: "Geist Mono", monospace;
 }
+
+html {
+  @apply bg-decrypt-800 text-white;
+}
