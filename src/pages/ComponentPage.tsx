@@ -12,7 +12,7 @@ const ComponentPage: React.FC = () => {
 	);
 
 	return (
-		<div className="flex py-32 max-w-screen-xl mx-auto">
+		<div className="flex mx-auto min-h-screen">
 			<div className="hidden md:block bg-decrypt-700">
 				<Sidebar />
 			</div>
