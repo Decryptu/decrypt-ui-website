@@ -17,5 +17,9 @@ export const componentsList: ComponentInfo[] = [
 		description: "Table to display complex data.",
 		route: "/component/table",
 	},
-	// Add more components
+	{
+		name: "Rainbow",
+		description: "Rainbow to display complex data.",
+		route: "/component/rainbow",
+	},
 ];
