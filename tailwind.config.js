@@ -18,7 +18,17 @@ module.exports = {
       white: "#FFF",
       black: "#000",
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        pulse: {
+          "0%, 100%": { transform: "scale(1)", opacity: 1 },
+          "50%": { transform: "scale(1.1)", opacity: 0.8 },
+        },
+      },
+      animation: {
+        pulse: "pulse 5s infinite",
+      },
+    },
   },
   plugins: [],
 };

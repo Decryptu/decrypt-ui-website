@@ -1,28 +1,37 @@
 import type React from "react";
 import { Link } from "react-router-dom";
 import { componentsList } from "../utils/constants";
+import GridBackground from "../components/GridBackground";
+import Spotlights from "../assets/images/Spotlights";
+import CardSpotlight from "../components/CardSpotlight";
 
 const Landing: React.FC = () => {
-	return (
-		<div className="p-8">
-			<h2 className="text-2xl font-bold">Welcome to Decrypt UI</h2>
-			<p className="text-gray-600">
-				Explore our high-quality UI components designed for developers.
-			</p>
-			<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-				{componentsList.map((component) => (
-					<Link
-						to={component.route}
-						key={component.name}
-						className="block p-4 border border-gray-200 shadow hover:shadow-md rounded-lg"
-					>
-						<h3 className="text-xl font-bold">{component.name}</h3>
-						<p className="text-gray-500">{component.description}</p>
-					</Link>
-				))}
-			</div>
-		</div>
-	);
+  return (
+    <div className="py-32 px-4 relative max-w-screen-xl mx-auto">
+      <GridBackground />
+      <Spotlights />
+      <h2 className="text-2xl font-bold">Welcome to Decrypt UI</h2>
+      <p className="text-gray-600">
+        Explore our high-quality UI components designed for developers.
+      </p>
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {componentsList.map((component) => {
+          const SvgComponent = component.svg; // Dynamically get the SVG component
+          return (
+            <CardSpotlight key={component.name}>
+              <Link to={component.route} className="block p-4 container hover:opacity-75">
+                <div className="flex flex-col items-center">
+                  <SvgComponent />
+                  <h3 className="text-xl font-bold mt-2">{component.name}</h3>
+                  <p className="text-gray-500">{component.description}</p>
+                </div>
+              </Link>
+            </CardSpotlight>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default Landing;
