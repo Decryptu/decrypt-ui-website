@@ -20,7 +20,7 @@ const ComponentPage: React.FC = () => {
 			<div className="hidden md:block">
 				<Sidebar />
 			</div>
-			<div className="flex-grow p-8">
+			<div className="flex-grow p-4 xl:p-8">
 				<React.Suspense fallback={<div>Loading...</div>}>
 					<ShowcaseComponent />
 				</React.Suspense>

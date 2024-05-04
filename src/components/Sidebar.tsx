@@ -4,7 +4,7 @@ import { componentsList } from "../utils/constants";
 
 const Sidebar: React.FC = () => {
 	return (
-		<div className="w-64 h-full bg-gray-100 p-5">
+		<div className="w-64 h-full">
 			<ul>
 				{componentsList.map((component) => (
 					<li key={component.name}>

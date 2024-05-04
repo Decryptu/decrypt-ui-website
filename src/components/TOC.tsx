@@ -2,7 +2,7 @@ import type React from "react";
 
 const TOC: React.FC = () => {
 	return (
-		<div className="w-48 h-full bg-gray-200 p-5">
+		<div className="w-48 h-full">
 			<ul>
 				<li>
 					<a href="#seo">SEO Stuff</a>
