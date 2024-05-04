@@ -1,5 +1,5 @@
 import type React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { componentsList } from "../utils/constants";
 
 const Sidebar: React.FC = () => {
@@ -8,7 +8,16 @@ const Sidebar: React.FC = () => {
 			<ul>
 				{componentsList.map((component) => (
 					<li key={component.name}>
-						<Link to={component.route}>{component.name}</Link>
+						<NavLink
+							to={component.route}
+							className={({ isActive }) =>
+								isActive
+									? "text-white py-2 block"
+									: "text-white/50 hover:text-blue py-2 block"
+							}
+						>
+							{component.name}
+						</NavLink>
 					</li>
 				))}
 			</ul>

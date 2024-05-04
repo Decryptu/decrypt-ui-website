@@ -1,3 +1,4 @@
+import CryptoTicker from "../assets/images/CryptoTicker";
 import FallbackSvg from "../assets/images/Fallback";
 
 export type ComponentInfo = {
@@ -9,10 +10,10 @@ export type ComponentInfo = {
 
 export const componentsList: ComponentInfo[] = [
 	{
-		name: "Button",
-		description: "Clickable button component.",
-		route: "/component/button",
-		svg: FallbackSvg,
+		name: "Crypto Ticker",
+		description: "Display any crypto price, market cap, and chart.",
+		route: "/component/ticker",
+		svg: CryptoTicker,
 	},
 	{
 		name: "Table",
