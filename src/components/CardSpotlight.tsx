@@ -54,7 +54,7 @@ const CardSpotlight: React.FC<CardSpotlightProps> = ({ children }) => {
 			style={{ minWidth: "fit-content", minHeight: "fit-content" }}
 		>
 			<div
-				className="pointer-events-none absolute inset-0 opacity-0 transition duration-300"
+				className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 -z-10"
 				style={{
 					opacity,
 					background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(123, 208, 245, 0.2), transparent 40%)`,
