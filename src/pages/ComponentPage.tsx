@@ -14,13 +14,13 @@ const ComponentPage: React.FC = () => {
 	);
 
 	return (
-		<div className="flex max-w-screen-2xl xl:px-8 mx-auto min-h-screen pt-24">
+		<div className="flex max-w-screen-2xl xl:px-8 px-4 mx-auto min-h-screen pt-24">
 			<GridBackground className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1]" />
 			<Spotlights className="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none animate-pulse" />
 			<div className="hidden md:block">
 				<Sidebar />
 			</div>
-			<div className="flex-grow p-4 xl:p-8">
+			<div className="flex-grow md:px-4 xl:px-8">
 				<React.Suspense fallback={<div>Loading...</div>}>
 					<ShowcaseComponent />
 				</React.Suspense>
