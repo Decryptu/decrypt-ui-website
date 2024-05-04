@@ -50,7 +50,7 @@ const CardSpotlight: React.FC<CardSpotlightProps> = ({ children }) => {
 			onBlur={handleBlur}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className="relative flex items-center justify-center overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-r from-black/25 to-decrypt-800/25 shadow-2xl backdrop-blur-sm"
+			className="relative flex items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-r from-black/25 to-decrypt-800/25 shadow-2xl backdrop-blur-sm"
 			style={{ minWidth: "fit-content", minHeight: "fit-content" }}
 		>
 			<div
@@ -58,6 +58,16 @@ const CardSpotlight: React.FC<CardSpotlightProps> = ({ children }) => {
 				style={{
 					opacity,
 					background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(123, 208, 245, 0.2), transparent 40%)`,
+				}}
+			/>
+			<div className="pointer-events-none absolute inset-0 rounded-3xl border border-white/15" />
+			<div
+				className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300"
+				style={{
+					opacity,
+					borderRadius: "inherit", // This line ensures the border effect follows the same rounded corners as the card
+					WebkitMaskImage: `radial-gradient(30% 100px at ${position.x}px ${position.y}px, black 45%, transparent)`,
+					border: "1px solid rgba(123, 208, 245, 0.8)",
 				}}
 			/>
 			{children}
