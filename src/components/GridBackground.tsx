@@ -1,9 +1,7 @@
-import type React from "react";
+import type { SVGProps } from "react";
 
-const GridBackground: React.FC = () => {
-	return (
-		<div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1]">
-			<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+const GridBackground = (props: SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" {...props}>
 				<defs>
 					<title>Grid</title>
 					<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -25,8 +23,6 @@ const GridBackground: React.FC = () => {
 				</defs>
 				<rect width="100%" height="100%" fill="url(#grid)" mask="url(#gridMask)" />
 			</svg>
-		</div>
 	);
-};
 
 export default GridBackground;

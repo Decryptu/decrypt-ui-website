@@ -8,8 +8,8 @@ import { componentsList } from "../utils/constants";
 const Landing: React.FC = () => {
 	return (
 		<div className="py-32 px-4 relative max-w-screen-2xl xl:px-8 mx-auto">
-			<GridBackground />
-			<Spotlights />
+			<GridBackground className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1]"/>
+			<Spotlights className="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none animate-pulse"/>
 			<h2 className="text-2xl font-bold">Welcome to Decrypt UI</h2>
 			<p className="text-gray-600">
 				Explore our high-quality UI components designed for developers.
