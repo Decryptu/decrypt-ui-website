@@ -40,9 +40,18 @@ const TOC: React.FC = () => {
           <button
             type="button"
             className="text-left w-full text-blue-500 hover:text-blue-700 focus:outline-none focus:underline"
-            onClick={() => scrollTo("import-use")}
+            onClick={() => scrollTo("installation")}
           >
-            How to Import and Use
+            Installation
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            className="text-left w-full text-blue-500 hover:text-blue-700 focus:outline-none focus:underline"
+            onClick={() => scrollTo("example")}
+          >
+            Example
           </button>
         </li>
         <li>
