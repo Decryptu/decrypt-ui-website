@@ -14,7 +14,7 @@ const ComponentPage: React.FC = () => {
 	);
 
 	return (
-		<div className="flex max-w-screen-2xl xl:px-8 px-4 mx-auto min-h-screen pt-24">
+		<div className="flex max-w-screen-2xl xl:px-8 px-4 mx-auto min-h-screen pt-32">
 			<GridBackground className="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1]" />
 			<Spotlights className="fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none animate-pulse" />
 			<div className="hidden md:block">
