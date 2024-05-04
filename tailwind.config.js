@@ -17,6 +17,8 @@ module.exports = {
 			pink: "#F9C",
 			white: "#FFF",
 			black: "#000",
+			green: "#14C784",
+			red: "#EA3943",
 		},
 		extend: {
 			keyframes: {
