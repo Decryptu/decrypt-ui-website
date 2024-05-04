@@ -1,5 +1,5 @@
-import FallbackSvg from "../assets/images/Fallback";
 import CryptoTicker from "../assets/images/CryptoTicker";
+import FallbackSvg from "../assets/images/Fallback";
 
 export type ComponentInfo = {
 	name: string;
