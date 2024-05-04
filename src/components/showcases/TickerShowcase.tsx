@@ -1,5 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { CopyIcon, CheckIcon } from "@radix-ui/react-icons";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CoinTicker from "../ui/CryptoTicker";
+import CopyableCode from '../../components/CopyableCode';
+
+// Create a custom theme based on vscDarkPlus
+const customStyle = {
+  ...vscDarkPlus,
+  'pre[class*="language-"]': {
+    ...vscDarkPlus['pre[class*="language-"]'],
+    background: 'rgba(0, 0, 0, 0.5)',
+    backdropFilter: 'blur(10px)',
+    fontFamily: 'inherit',
+    borderRadius: '0.5rem',
+    border: 'solid 1px rgba(255, 255, 255, 0.25)'
+  }
+};
 
 const CoinTickerShowcase: React.FC = () => {
   // Dummy Base64 string - replace this with your actual Base64-encoded TypeScript code
@@ -9,10 +26,18 @@ const CoinTickerShowcase: React.FC = () => {
   // Decoding the Base64 string to get the original TypeScript code
   const decodedCode = atob(base64EncodedCode);
 
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(decodedCode);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 1000);
+  };
+
   return (
     <div className="space-y-4">
       <section id="seo" className="pb-8">
-        <h2 className="text-2xl font-bold">Coin Ticker Component</h2>
+        <h2 className="text-2xl font-bold pb-4">Coin Ticker Component</h2>
         <p className="text-decrypt-400">
           This component provides a live display of cryptocurrency information
           including price, market cap, 24-hour change percentage, and an
@@ -21,7 +46,7 @@ const CoinTickerShowcase: React.FC = () => {
       </section>
 
       <section id="visual" className="pb-8">
-        <h3 className="text-xl font-semibold">Showcase</h3>
+        <h3 className="text-xl font-semibold pb-4">Showcase</h3>
         <CoinTicker
           cryptoCurrency="bitcoin"
           refreshInterval={10000}
@@ -31,8 +56,8 @@ const CoinTickerShowcase: React.FC = () => {
       </section>
 
       <section id="installation" className="pb-8">
-        <h3 className="text-xl font-semibold">How to Import and Use</h3>
-        <code>npm install @decrypt-ui/cryptoticker</code>
+        <h3 className="text-xl font-semibold pb-4">How to Import and Use</h3>
+        <CopyableCode code="npm install @decrypt-ui/cryptoticker" />
         <p className="text-decrypt-400">
           Use the <code>CoinTicker</code> component to render a cryptocurrency
           ticker in your application. Here are the props it accepts:
@@ -40,14 +65,14 @@ const CoinTickerShowcase: React.FC = () => {
       </section>
 
       <section id="example" className="pb-8">
-        <h3 className="text-xl font-semibold">How to Import and Use</h3>
-        <code>import CoinTicker from '../ui/CryptoTicker';</code>
+        <h3 className="text-xl font-semibold pb-4">How to Import and Use</h3>
+        <CopyableCode code="import CoinTicker from '../ui/CryptoTicker';" />
         <p className="text-decrypt-400">
           Use the <code>CoinTicker</code> component to render a cryptocurrency
           ticker in your application. Here are the props it accepts:
         </p>
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-decrypt-400 border border-decrypt-400">
+        <div className="overflow-x-auto pt-4">
+          <table className="min-w-full divide-y divide-decrypt-400 border rounded-xl border-decrypt-400">
             <thead className="bg-decrypt-800">
               <tr>
                 <th
@@ -121,9 +146,18 @@ const CoinTickerShowcase: React.FC = () => {
       </section>
 
       <section id="source-code" className="pb-8">
-        <h3 className="text-xl font-semibold">Source Code</h3>
-        <div className="overflow-x-auto">
-          <pre>{decodedCode}</pre>
+        <h3 className="text-xl font-semibold pb-4">Source Code</h3>
+        <div className="relative overflow-x-auto">
+          <SyntaxHighlighter language="typescript" style={customStyle}>
+            {decodedCode}
+          </SyntaxHighlighter>
+          <button
+            onClick={handleCopy}
+            className="absolute top-2 right-2 bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded"
+            title="Copy to clipboard"
+          >
+            {isCopied ? <CheckIcon /> : <CopyIcon />}
+          </button>
         </div>
       </section>
     </div>

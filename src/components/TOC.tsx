@@ -3,7 +3,7 @@ import type React from "react";
 const scrollTo = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
-    const headerOffset = 80; // Height of the sticky header
+    const headerOffset = 80;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -16,53 +16,26 @@ const scrollTo = (id: string) => {
 
 const TOC: React.FC = () => {
   return (
-    <div className="w-48 h-full">
+    <div className="w-48 h-full px-4">
       <ul>
         <li>
-          <button
-            type="button"
-            className="text-left w-full text-blue-500 hover:text-blue-700 focus:outline-none focus:underline"
-            onClick={() => scrollTo("seo")}
-          >
-            Description
-          </button>
+          <h3 className="text-left w-full text-white focus:outline-none">
+            ON THIS PAGE
+          </h3>
         </li>
-        <li>
-          <button
-            type="button"
-            className="text-left w-full text-blue-500 hover:text-blue-700 focus:outline-none focus:underline"
-            onClick={() => scrollTo("visual")}
-          >
-            Showcase
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="text-left w-full text-blue-500 hover:text-blue-700 focus:outline-none focus:underline"
-            onClick={() => scrollTo("installation")}
-          >
-            Installation
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="text-left w-full text-blue-500 hover:text-blue-700 focus:outline-none focus:underline"
-            onClick={() => scrollTo("example")}
-          >
-            Example
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="text-left w-full text-blue-500 hover:text-blue-700 focus:outline-none focus:underline"
-            onClick={() => scrollTo("source-code")}
-          >
-            Source Code
-          </button>
-        </li>
+        {["seo", "visual", "installation", "example", "source-code"].map(
+          (id) => (
+            <li key={id} className="my-4">
+              <button
+                type="button"
+                className="text-left w-full text-decrypt-400 hover:text-blue focus:outline-none"
+                onClick={() => scrollTo(id)}
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1).replace("-", " ")}
+              </button>
+            </li>
+          )
+        )}
       </ul>
     </div>
   );
