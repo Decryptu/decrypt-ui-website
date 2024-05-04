@@ -147,7 +147,7 @@ const CoinTicker: React.FC<CoinTickerProps> = ({
 
   return (
     <div className="bg-black text-white max-w-72 border-white/25 py-4 border rounded-xl">
-      <div className="flex justify-between font-light px-4">
+      <div className="flex justify-between font-light px-4 items-center">
         <span className="text-md capitalize">{cryptoCurrency}</span>
         <span
           className={`text-md bg-white/10 rounded-full px-3 py-1 ${
@@ -164,7 +164,7 @@ const CoinTicker: React.FC<CoinTickerProps> = ({
           {price}
         </span>
       </div>
-      <div className="text-white/50 text-sm font-medium mb-2 px-4">
+      <div className="text-white/50 text-sm font-light mb-2 px-4">
         MCap: {getCurrencySymbol(displayFormat)}
         {marketCap}
       </div>

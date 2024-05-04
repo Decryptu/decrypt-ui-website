@@ -37,7 +37,7 @@ const CoinTickerShowcase: React.FC = () => {
   return (
     <div className="space-y-4">
       <section id="seo" className="pb-8">
-        <h2 className="text-2xl font-bold pb-4">Coin Ticker Component</h2>
+        <h2 className="text-2xl font-bold text-white pb-4">Coin Ticker Component</h2>
         <p className="text-decrypt-400">
           This component provides a live display of cryptocurrency information
           including price, market cap, 24-hour change percentage, and an
@@ -72,7 +72,7 @@ const CoinTickerShowcase: React.FC = () => {
           ticker in your application. Here are the props it accepts:
         </p>
         <div className="overflow-x-auto pt-4">
-          <table className="min-w-full divide-y divide-decrypt-400 border rounded-xl border-decrypt-400">
+          <table className="min-w-full divide-y divide-white/25 border rounded-xl border-white/25">
             <thead className="bg-decrypt-800">
               <tr>
                 <th
@@ -95,7 +95,7 @@ const CoinTickerShowcase: React.FC = () => {
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white/10 divide-y divide-decrypt-400">
+            <tbody className="bg-white/10 divide-y divide-white/25">
               <tr>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
                   cryptoCurrency
