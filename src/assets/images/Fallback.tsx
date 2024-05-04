@@ -3,11 +3,10 @@ import type { SVGProps } from "react";
 const Fallback = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width={314}
-		height={157}
+		viewBox="0 0 314 157" // Adjusted to match original width and height
 		fill="none"
-		className="w-full"
-		{...props}
+		className="w-full h-auto" // Ensuring it takes full width and automatic height
+		{...props} // Spread any additional props passed to the component
 	>
 		<title>Fallback</title>
 		<rect width={314} height={157} fill='url("#a")' rx={12} />

@@ -12,8 +12,8 @@ const ComponentPage: React.FC = () => {
 	);
 
 	return (
-		<div className="flex mx-auto min-h-screen">
-			<div className="hidden md:block bg-decrypt-700">
+		<div className="flex max-w-screen-2xl xl:px-8 mx-auto min-h-screen pt-24">
+			<div className="hidden md:block">
 				<Sidebar />
 			</div>
 			<div className="flex-grow p-8">
@@ -21,7 +21,7 @@ const ComponentPage: React.FC = () => {
 					<ShowcaseComponent />
 				</React.Suspense>
 			</div>
-			<div className="hidden md:block bg-decrypt-700">
+			<div className="hidden md:block">
 				<TOC />
 			</div>
 			<div className="md:hidden">

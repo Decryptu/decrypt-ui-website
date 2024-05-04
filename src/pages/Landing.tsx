@@ -7,7 +7,7 @@ import { componentsList } from "../utils/constants";
 
 const Landing: React.FC = () => {
 	return (
-		<div className="py-32 px-4 relative max-w-screen-xl mx-auto">
+		<div className="py-32 px-4 relative max-w-screen-2xl xl:px-8 mx-auto">
 			<GridBackground />
 			<Spotlights />
 			<h2 className="text-2xl font-bold">Welcome to Decrypt UI</h2>
@@ -20,7 +20,7 @@ const Landing: React.FC = () => {
 					return (
 						<CardSpotlight key={component.name}>
 							<Link to={component.route} className="block p-4 container">
-								<div className="flex flex-col items-center">
+								<div className="flex flex-col items-start">
 									<SvgComponent />
 									<h3 className="text-xl font-bold mt-2">{component.name}</h3>
 									<p className="text-gray-500">{component.description}</p>

@@ -50,7 +50,7 @@ const CardSpotlight: React.FC<CardSpotlightProps> = ({ children }) => {
 			onBlur={handleBlur}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className="relative flex items-center justify-center overflow-hidden rounded-xl border border-white/25 bg-gradient-to-r from-black to-decrypt-800 shadow-2xl"
+			className="relative flex items-center justify-center overflow-hidden rounded-3xl border border-white/25 bg-gradient-to-r from-black to-decrypt-800 shadow-2xl"
 			style={{ minWidth: "fit-content", minHeight: "fit-content" }}
 		>
 			<div

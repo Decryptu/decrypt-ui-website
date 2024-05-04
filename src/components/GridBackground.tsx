@@ -10,7 +10,7 @@ const GridBackground: React.FC = () => {
 						<path
 							d="M 40 0 L 0 0 0 40"
 							fill="none"
-							stroke="rgba(255, 255, 255, 0.2)"
+							stroke="rgba(255, 255, 255, 0.1)"
 							strokeWidth="1"
 						/>
 					</pattern>
