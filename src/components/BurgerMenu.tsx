@@ -10,13 +10,13 @@ const BurgerMenu: React.FC = () => {
 		<>
 			<button
 				type="button"
-				className="fixed bottom-10 right-10 bg-blue-500 text-white p-3 rounded-full"
+				className="fixed bottom-10 right-10 bg-decrypt-400 text-white p-3 rounded-full"
 				onClick={() => setIsOpen(!isOpen)}
 			>
 				Menu
 			</button>
 			{isOpen && (
-				<div className="fixed inset-x-0 bottom-20 p-5 bg-white shadow-lg rounded-lg border">
+				<div className="fixed inset-x-0 bottom-20 p-5 bg-decrypt-400 shadow-lg rounded-lg border">
 					<ul className="space-y-2">
 						{componentsList.map((component) => (
 							<li key={component.name}>
