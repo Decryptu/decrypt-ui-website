@@ -18,7 +18,10 @@
 		"@types/react": "^18.3.1",
 		"@types/react-dom": "^18.3.0",
 		"@vercel/analytics": "^1.2.2",
+		"axios": "^1.6.8",
+		"chart.js": "^4.4.2",
 		"react": "^18.3.1",
+		"react-chartjs-2": "^5.2.0",
 		"react-dom": "^18.3.1",
 		"react-router-dom": "^6.23.0",
 		"react-scripts": "5.0.1",
@@ -26,10 +29,17 @@
 		"web-vitals": "^2.1.4"
 	},
 	"eslintConfig": {
-		"extends": ["react-app", "react-app/jest"]
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
 	},
 	"browserslist": {
-		"production": [">0.2%", "not dead", "not op_mini all"],
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
 		"development": [
 			"last 1 chrome version",
 			"last 1 firefox version",
