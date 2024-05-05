@@ -1,12 +1,12 @@
 import type React from "react";
-import { decodeBase64 } from '../../utils/base64';
-import CopyableCode from "../../components/CopyableCode";
-import CoinTicker from "../ui/CryptoTicker";
+import { decodeBase64 } from "../../utils/base64";
+import CopyableCode from "../CopyableCode";
+import CryptoToFiatConverter from "../ui/CryptoToFiat";
 
 const CoinTickerShowcase: React.FC = () => {
   // Create the example code
   const exampleUsage = `
-	import CoinTicker from "../ui/CryptoTicker";
+	import CoinTicker from "../ui/CoinTicker";
 	function MyApp() {
 		return (
 			<CoinTicker
@@ -25,6 +25,9 @@ const CoinTickerShowcase: React.FC = () => {
   // Decoding the Base64 string to get the original TypeScript code
   const decodedCode = decodeBase64(base64EncodedCode);
 
+  const cryptoList = ["bitcoin", "ethereum", "ripple"]; // Example cryptos
+  const fiatList = ["usd", "eur", "gbp"]; // Example fiats
+
   return (
     <div className="space-y-4">
       <section id="seo" className="pb-8">
@@ -40,12 +43,7 @@ const CoinTickerShowcase: React.FC = () => {
 
       <section id="visual" className="pb-8">
         <h3 className="text-xl font-semibold pb-4">Showcase</h3>
-        <CoinTicker
-          cryptoCurrency="bitcoin"
-          refreshInterval={10000}
-          displayFormat="USD"
-          displayChart={true}
-        />
+        <CryptoToFiatConverter cryptoList={cryptoList} fiatList={fiatList} />
       </section>
 
       <section id="installation" className="pb-8">
