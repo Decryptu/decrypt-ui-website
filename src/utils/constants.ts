@@ -10,15 +10,15 @@ export type ComponentInfo = {
 
 export const componentsList: ComponentInfo[] = [
 	{
-		name: "Crypto Ticker",
+		name: "Coin Ticker",
 		description: "Display any crypto price, market cap, and chart.",
-		route: "/component/ticker",
+		route: "/component/cointicker",
 		svg: CryptoTicker,
 	},
 	{
-		name: "Table",
-		description: "Table to display complex data.",
-		route: "/component/table",
+		name: "Crypto to Fiat",
+		description: "Convert any crypto to fiat.",
+		route: "/component/cryptotofiat",
 		svg: FallbackSvg,
 	},
 	{
