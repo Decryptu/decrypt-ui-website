@@ -1,5 +1,5 @@
 import type React from "react";
-import Button from "../ui/Button";
+import Button from "../ui/NewsFeed";
 
 const ButtonShowcase: React.FC = () => {
 	return (
