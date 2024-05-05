@@ -11,7 +11,7 @@ const Fallback = (props: SVGProps<SVGSVGElement>) => (
 		<title>Fallback</title>
 		<rect width={314} height={157} fill='url("#a")' rx={12} />
 		<g filter="url(#b)">
-			<rect width={152} height={91} x={81} y={33} fill="#FFF" rx={8} />
+			<rect width={152} height={91} x={81} y={33} fill="#000" stroke="#333" rx={8} />
 		</g>
 		<rect width={40} height={16} x={93} y={96} fill="#BFDBFE" rx={4} />
 		<path
@@ -37,8 +37,8 @@ const Fallback = (props: SVGProps<SVGSVGElement>) => (
 				y2={1.396}
 				gradientUnits="userSpaceOnUse"
 			>
-				<stop stopColor="#38BDF8" />
-				<stop offset={1} stopColor="#6366F1" />
+				<stop stopColor="#202020" />
+				<stop offset={1} stopColor="#000000" />
 			</linearGradient>
 			<filter
 				id="b"

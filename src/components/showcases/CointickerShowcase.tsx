@@ -41,7 +41,7 @@ const CoinTickerShowcase: React.FC = () => {
 			<section id="visual" className="pb-8">
 				<h3 className="text-xl font-semibold pb-4">Showcase</h3>
 				<CoinTicker
-					cryptoCurrency="bitcoin"
+					cryptoCurrency="dogecoin"
 					refreshInterval={10000}
 					displayFormat="USD"
 					displayChart={true}
