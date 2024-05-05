@@ -17,34 +17,41 @@ const customStyle = {
 	},
 };
 interface CopyableCodeProps {
-    code: string;
-    language?: string;
+	code: string;
+	language?: string;
 }
 
-const CopyableCode: React.FC<CopyableCodeProps> = ({ code, language = "typescript" }) => {
-    const [isCopied, setIsCopied] = useState(false);
+const CopyableCode: React.FC<CopyableCodeProps> = ({
+	code,
+	language = "typescript",
+}) => {
+	const [isCopied, setIsCopied] = useState(false);
 
-    const handleCopy = async () => {
-        await navigator.clipboard.writeText(code);
-        setIsCopied(true);
-        setTimeout(() => setIsCopied(false), 2000);
-    };
+	const handleCopy = async () => {
+		await navigator.clipboard.writeText(code);
+		setIsCopied(true);
+		setTimeout(() => setIsCopied(false), 2000);
+	};
 
-    return (
-        <div className="relative">
-            <SyntaxHighlighter language={language} style={customStyle}>
-                {code}
-            </SyntaxHighlighter>
-            <button
-                onClick={handleCopy}
-                type="button"
-                className="absolute top-3 right-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
-                title="Copy to clipboard"
-            >
-                {isCopied ? <CheckIcon className="w-4 h-4" /> : <CopyIcon className="w-4 h-4" />}
-            </button>
-        </div>
-    );
+	return (
+		<div className="relative">
+			<SyntaxHighlighter language={language} style={customStyle}>
+				{code}
+			</SyntaxHighlighter>
+			<button
+				onClick={handleCopy}
+				type="button"
+				className="absolute top-3 right-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+				title="Copy to clipboard"
+			>
+				{isCopied ? (
+					<CheckIcon className="w-4 h-4" />
+				) : (
+					<CopyIcon className="w-4 h-4" />
+				)}
+			</button>
+		</div>
+	);
 };
 
 export default CopyableCode;

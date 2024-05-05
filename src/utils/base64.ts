@@ -7,14 +7,16 @@
  * @returns {string} - The decoded string.
  */
 export const decodeBase64 = (base64String: string): string => {
-  return decodeURIComponent(
-    atob(base64String)
-      .split("")
-      .map((char) => {
-        return "%" + ("00" + char.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join("")
-  );
+	return decodeURIComponent(
+		atob(base64String)
+			.split("")
+			.map((char) => {
+				// Nested template literal to completely avoid string concatenation
+				const hexCode = char.charCodeAt(0).toString(16);
+				return `%${`00${hexCode}`.slice(-2)}`;
+			})
+			.join(""),
+	);
 };
 
 /**
@@ -24,12 +26,9 @@ export const decodeBase64 = (base64String: string): string => {
  * @returns {string} - The Base64 encoded string.
  */
 export const encodeBase64 = (normalString: string): string => {
-  return btoa(
-    encodeURIComponent(normalString).replace(
-      /%([0-9A-F]{2})/g,
-      function (match, p1) {
-        return String.fromCharCode(parseInt(p1, 16));
-      }
-    )
-  );
+	return btoa(
+		encodeURIComponent(normalString).replace(/%([0-9A-F]{2})/g, (match, p1) =>
+			String.fromCharCode(Number.parseInt(p1, 16)),
+		),
+	);
 };
