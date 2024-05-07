@@ -5,7 +5,7 @@ export type ComponentInfo = {
 	name: string;
 	description: string;
 	route: string;
-	svg: React.ComponentType; // This specifies the type for a component.
+	svg: React.ComponentType;
 };
 
 export const componentsList: ComponentInfo[] = [
@@ -16,15 +16,15 @@ export const componentsList: ComponentInfo[] = [
 		svg: CryptoTicker,
 	},
 	{
-		name: "Crypto to Fiat",
+		name: "[WIP] Crypto to Fiat",
 		description: "Convert any crypto to fiat.",
 		route: "/component/cryptotofiat",
 		svg: FallbackSvg,
 	},
 	{
-		name: "Rainbow",
-		description: "Rainbow to display complex data.",
-		route: "/component/rainbow",
+		name: "[WIP] News Feed",
+		description: "Get the latest crypto news from multiple sources.",
+		route: "/component/newsfeed",
 		svg: FallbackSvg,
 	},
 ];
