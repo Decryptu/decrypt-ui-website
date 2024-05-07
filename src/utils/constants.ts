@@ -16,13 +16,13 @@ export const componentsList: ComponentInfo[] = [
 		svg: CryptoTicker,
 	},
 	{
-		name: "Crypto to Fiat",
+		name: "[WIP] Crypto to Fiat",
 		description: "Convert any crypto to fiat.",
 		route: "/component/cryptotofiat",
 		svg: FallbackSvg,
 	},
 	{
-		name: "News Feed",
+		name: "[WIP] News Feed",
 		description: "Get the latest crypto news from multiple sources.",
 		route: "/component/newsfeed",
 		svg: FallbackSvg,
