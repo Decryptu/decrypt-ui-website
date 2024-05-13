@@ -1,6 +1,6 @@
 # Decrypt UI
 
-![React logo](public/IamDesigner!English.png)
+![React logo](public/react.png)
 
 ## Available Scripts
 
