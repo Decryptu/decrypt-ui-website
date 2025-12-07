@@ -1,6 +1,6 @@
 import type React from 'react';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import logo from '../assets/images/logo.svg';
 import DisclaimerBanner from './DisclaimerBanner';
 

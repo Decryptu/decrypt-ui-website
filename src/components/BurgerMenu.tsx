@@ -1,6 +1,8 @@
+"use client";
+
 import type React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { componentsList } from "../utils/constants";
 
 const BurgerMenu: React.FC = () => {
@@ -21,7 +23,7 @@ const BurgerMenu: React.FC = () => {
 						{componentsList.map((component) => (
 							<li key={component.name}>
 								<Link
-									to={component.route}
+									href={component.route}
 									className="block text-center"
 									onClick={() => setIsOpen(false)}
 								>

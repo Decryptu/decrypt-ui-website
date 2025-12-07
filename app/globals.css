@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+button,
+input,
+textarea {
+	font-family: "Geist", sans-serif;
+}
+
+code,
+pre {
+	font-family: "Geist Mono", monospace;
+}
+
+html {
+	@apply bg-decrypt-800 text-white;
+}
