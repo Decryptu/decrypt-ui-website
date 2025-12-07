@@ -1,6 +1,7 @@
 import type React from 'react';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
+import Image from 'next/image';
 import logo from '../assets/images/logo.svg';
 import DisclaimerBanner from './DisclaimerBanner';
 
@@ -16,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ showDisclaimer = true }) => {
                 <div className="flex justify-between items-center max-w-screen-2xl px-4 xl:px-8 mx-auto">
                     <h1 className="text-lg">
                         <Link href="/" className="hover:underline">
-                            <img
+                            <Image
                                 src={logo}
                                 alt="Decrypt Logo"
                                 className="w-48 transition duration-300 ease-in-out transform hover:-rotate-3 active:scale-90"
