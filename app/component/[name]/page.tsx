@@ -1,27 +1,14 @@
 "use client";
 
 import { notFound, useParams } from "next/navigation";
-import dynamic from "next/dynamic";
 import Spotlights from "@/assets/images/Spotlights";
 import BurgerMenu from "@/components/BurgerMenu";
 import GridBackground from "@/components/GridBackground";
 import Sidebar from "@/components/Sidebar";
 import TOC from "@/components/TOC";
-
-const CointickerShowcase = dynamic(
-	() => import("@/components/showcases/CointickerShowcase"),
-	{ ssr: false },
-);
-
-const CryptotofiatShowcase = dynamic(
-	() => import("@/components/showcases/CryptotofiatShowcase"),
-	{ ssr: false },
-);
-
-const NewsfeedShowcase = dynamic(
-	() => import("@/components/showcases/NewsfeedShowcase"),
-	{ ssr: false },
-);
+import CointickerShowcase from "@/components/showcases/CointickerShowcase";
+import CryptotofiatShowcase from "@/components/showcases/CryptotofiatShowcase";
+import NewsfeedShowcase from "@/components/showcases/NewsfeedShowcase";
 
 const showcaseComponents: Record<string, React.ComponentType> = {
 	cointicker: CointickerShowcase,
