@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+	/* Custom colors */
+	--color-transparent: transparent;
+	--color-current: currentColor;
+	--color-decrypt-400: #757678;
+	--color-decrypt-500: #27292b;
+	--color-decrypt-600: #1e1f22;
+	--color-decrypt-700: #191a1d;
+	--color-decrypt-800: #0e0f10;
+	--color-decrypt-900: #050506;
+	--color-blue: #7bd0f5;
+	--color-pink: #f9c;
+	--color-white: #fff;
+	--color-black: #000;
+	--color-green: #14c784;
+	--color-red: #ea3943;
+
+	/* Custom animations */
+	--animate-pulse: pulse 5s infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.2);
+		opacity: 0.8;
+	}
+}
+
+body,
+button,
+input,
+textarea {
+	font-family: "Geist", sans-serif;
+}
+
+code,
+pre {
+	font-family: "Geist Mono", monospace;
+}
+
+html {
+	@apply bg-decrypt-800 text-white;
+}

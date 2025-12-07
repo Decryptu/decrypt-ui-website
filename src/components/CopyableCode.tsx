@@ -1,3 +1,5 @@
+"use client";
+
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
 import type React from "react";
 import { useState } from "react";

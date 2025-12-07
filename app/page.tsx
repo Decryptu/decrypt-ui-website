@@ -1,9 +1,9 @@
 import type React from "react";
-import { Link } from "react-router-dom";
-import Spotlights from "../assets/images/Spotlights";
-import CardSpotlight from "../components/CardSpotlight";
-import GridBackground from "../components/GridBackground";
-import { componentsList } from "../utils/constants";
+import Link from "next/link";
+import Spotlights from "@/assets/images/Spotlights";
+import CardSpotlight from "@/components/CardSpotlight";
+import GridBackground from "@/components/GridBackground";
+import { componentsList } from "@/utils/constants";
 
 const Landing: React.FC = () => {
 	return (
@@ -16,10 +16,10 @@ const Landing: React.FC = () => {
 			</p>
 			<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 				{componentsList.map((component) => {
-					const SvgComponent = component.svg; // Dynamically get the SVG component
+					const SvgComponent = component.svg;
 					return (
 						<CardSpotlight key={component.name}>
-							<Link to={component.route} className="block p-4 container">
+							<Link href={component.route} className="block p-4 container">
 								<div className="flex flex-col items-start">
 									<SvgComponent />
 									<h3 className="text-xl font-bold mt-2">{component.name}</h3>
