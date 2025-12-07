@@ -1,28 +1,36 @@
-import React from "react";
-import { notFound } from "next/navigation";
+"use client";
+
+import { notFound, useParams } from "next/navigation";
+import dynamic from "next/dynamic";
 import Spotlights from "@/assets/images/Spotlights";
 import BurgerMenu from "@/components/BurgerMenu";
 import GridBackground from "@/components/GridBackground";
 import Sidebar from "@/components/Sidebar";
 import TOC from "@/components/TOC";
 
+const CointickerShowcase = dynamic(
+	() => import("@/components/showcases/CointickerShowcase"),
+	{ ssr: false },
+);
+
+const CryptotofiatShowcase = dynamic(
+	() => import("@/components/showcases/CryptotofiatShowcase"),
+	{ ssr: false },
+);
+
+const NewsfeedShowcase = dynamic(
+	() => import("@/components/showcases/NewsfeedShowcase"),
+	{ ssr: false },
+);
+
 const showcaseComponents: Record<string, React.ComponentType> = {
-	cointicker: React.lazy(
-		() => import("@/components/showcases/CointickerShowcase"),
-	),
-	cryptotofiat: React.lazy(
-		() => import("@/components/showcases/CryptotofiatShowcase"),
-	),
-	newsfeed: React.lazy(
-		() => import("@/components/showcases/NewsfeedShowcase"),
-	),
+	cointicker: CointickerShowcase,
+	cryptotofiat: CryptotofiatShowcase,
+	newsfeed: NewsfeedShowcase,
 };
 
-export default function ComponentPage({
-	params,
-}: {
-	params: { name: string };
-}) {
+export default function ComponentPage() {
+	const params = useParams<{ name: string }>();
 	const componentName = params.name.toLowerCase();
 	const ShowcaseComponent = showcaseComponents[componentName];
 
@@ -40,9 +48,7 @@ export default function ComponentPage({
 				</div>
 			</div>
 			<div className="flex-grow md:px-4 xl:px-8 min-w-0">
-				<React.Suspense fallback={<div>Loading...</div>}>
-					<ShowcaseComponent />
-				</React.Suspense>
+				<ShowcaseComponent />
 			</div>
 			<div className="hidden xl:block md:hidden">
 				<div className="sticky top-[120px]">
@@ -54,12 +60,4 @@ export default function ComponentPage({
 			</div>
 		</div>
 	);
-}
-
-export async function generateStaticParams() {
-	return [
-		{ name: "cointicker" },
-		{ name: "cryptotofiat" },
-		{ name: "newsfeed" },
-	];
 }

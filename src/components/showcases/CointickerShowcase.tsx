@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 import { decodeBase64 } from "../../utils/base64";
 import CopyableCode from "../CopyableCode";
